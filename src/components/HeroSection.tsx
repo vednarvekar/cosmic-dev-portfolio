@@ -14,7 +14,7 @@ const HeroSection = () => {
     { prefix: '~$', text: ' cat skills.core', delay: 100 },
     {
       prefix: '>',
-      text: ' Node.js | Go | TypeScript | Python | PostgreSQL | Redis | Kafka',
+      text: ' Node.js | Go | TypeScript | Python | PostgreSQL | Redis',
       delay: 35,
       isOutput: true
     },
@@ -27,13 +27,13 @@ const HeroSection = () => {
       isOutput: true
     },
 
-    { prefix: '~$', text: ' cat skills.infra', delay: 100 },
-    {
-      prefix: '>',
-      text: ' Docker | Kubernetes | Nginx | OpenTelemetry | Langfuse',
-      delay: 35,
-      isOutput: true
-    },
+    // { prefix: '~$', text: ' cat skills.infra', delay: 100 },
+    // {
+    //   prefix: '>',
+    //   text: ' Docker | Kubernetes | Nginx | OpenTelemetry | Langfuse',
+    //   delay: 35,
+    //   isOutput: true
+    // },
 
     { prefix: '~$', text: ' cat README.md', delay: 100 },
     {
