@@ -11,7 +11,7 @@ const navItems = [
 ];
 
 const NAME = 'Ved Narvekar';
-const RESUME_PATH = '/Ved%20Narvekar%20(2).pdf';
+const RESUME_PATH = '/resume%20(2).pdf';
 
 const XLogo = ({ size = 19 }: { size?: number }) => (
   <svg
