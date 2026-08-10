@@ -97,7 +97,7 @@ const HeroSection = () => {
         style={{ background: 'radial-gradient(circle, #7c6aff 0%, transparent 70%)' }}
       />
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="container mx-auto px-4 min-[390px]:px-5 sm:px-6 py-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -124,7 +124,7 @@ const HeroSection = () => {
 
           {/* Terminal Window */}
           <div
-            className="relative rounded-xl overflow-hidden border border-white/[0.07]"
+            className="relative rounded-xl overflow-hidden border border-white/[0.07] w-full max-w-[24rem] min-[390px]:max-w-[25.5rem] min-[430px]:max-w-[27rem] sm:max-w-none mx-auto"
             style={{
               background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.3) 100%)',
               backdropFilter: 'blur(20px)',
@@ -152,7 +152,7 @@ const HeroSection = () => {
             </div>
 
             {/* Terminal body */}
-            <div className="p-6 font-mono text-sm md:text-base space-y-1.5 min-h-[320px]">
+            <div className="p-4 min-[390px]:p-5 sm:p-6 font-mono text-[13px] sm:text-sm md:text-base space-y-1.5 min-h-[240px] min-[390px]:min-h-[260px] sm:min-h-[320px]">
               {lines.slice(0, currentLine).map((line, index) => (
                 <div key={index} className={`flex items-start  ${line.isOutput ? 'pl-4' : ''}`}>
                   <span className={`shrink-0 ${line.isOutput ? 'text-syntax-cyan opacity-60' : 'text-syntax-green'}`}>

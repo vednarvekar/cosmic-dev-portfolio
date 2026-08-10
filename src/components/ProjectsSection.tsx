@@ -117,7 +117,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="min-h-screen py-20">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -144,7 +144,7 @@ const ProjectsSection = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.1 + index * 0.08, duration: 0.3 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="group relative"
+                  className="group relative w-full max-w-[22rem] md:max-w-none mx-auto"
                 >
                   {/* Ambient glow */}
                   <div className="absolute -inset-[1px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/10 via-white/5 to-transparent blur-sm" />

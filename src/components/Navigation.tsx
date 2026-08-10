@@ -56,24 +56,27 @@ const Navigation = () => {
       isScrolled ? 'bg-background/80 backdrop-blur-md' : ''
       }`}
     >
-      <div className="container mx-auto px-6 py-2">
+      <div className="container mx-auto px-3 min-[390px]:px-4 sm:px-6 py-2">
         <div className="relative flex items-center justify-between gap-3">
 
           {/* LOGO + NAME */}
           <motion.a
             href="#hero"
-            className="flex items-center font-mono text-base font-bold shrink-0"
+            className="flex items-center gap-1 font-mono text-base font-bold shrink-0"
             whileHover={{ scale: 1.05 }}
           >
             {/* LOGO (NO FLICKER, BIGGER) */}
             <img
               src="/logo.svg"
               alt="Ved Narvekar logo"
-              className="w-10 h-10 md:w-12 md:h-12 drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]"
+              className="w-8 h-8 min-[390px]:w-9 min-[390px]:h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]"
             />
 
-            {/* NAME (LETTER-PAIR FLICKER) */}
-            <span className="hidden lg:flex tracking-wide text-white text-sm">
+            {/* NAME (MOBILE FULL + DESKTOP FLICKER) */}
+            <span className="sm:hidden tracking-tight text-white text-xs min-[390px]:text-[13px] min-[430px]:text-sm leading-none whitespace-nowrap">
+              {NAME}
+            </span>
+            <span className="hidden sm:flex tracking-wide text-white text-xs lg:text-sm">
               {NAME.split('').map((char, index) => {
                 if (char === ' ') {
                   return <span key={index} className="w-2" />;
@@ -140,21 +143,25 @@ const Navigation = () => {
                 href={RESUME_PATH}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs md:text-sm px-2 md:px-2.5 py-1.5 bg-accent/20 border border-accent/60 rounded-md text-white hover:bg-accent/35 transition-all inline-flex items-center gap-1.5"
+                aria-label="Resume"
+                className="font-mono text-[11px] min-[390px]:text-xs md:text-sm px-2 min-[390px]:px-2.5 md:px-2.5 py-1.5 bg-accent/20 border border-accent/60 rounded-md text-white hover:bg-accent/35 transition-all inline-flex items-center gap-1 min-[390px]:gap-1.5 whitespace-nowrap"
               >
-                <FileText size={14} />
-                {'> resume'}
+                <FileText size={13} />
+                <span className="sm:hidden">resume</span>
+                <span className="hidden sm:inline">{'> resume'}</span>
               </a>
 
               <a
                 href="#contact"
-                className="font-mono text-xs md:text-sm px-2 md:px-2.5 py-1.5 bg-primary/20 border border-primary/70 rounded-md text-white hover:bg-primary hover:text-primary-foreground transition-all"
+                aria-label="Contact me"
+                className="font-mono text-[11px] min-[390px]:text-xs md:text-sm px-2 min-[390px]:px-2.5 md:px-2.5 py-1.5 bg-primary/20 border border-primary/70 rounded-md text-white hover:bg-primary hover:text-primary-foreground transition-all inline-flex items-center whitespace-nowrap"
               >
-                {'> contact_me'}
+                <span className="sm:hidden">contact</span>
+                <span className="hidden sm:inline">{'> contact_me'}</span>
               </a>
             </div>
 
-            <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 flex items-center gap-2.5">
+            <div className="absolute top-full mt-2 right-0 flex items-center gap-1.5 min-[390px]:gap-2 sm:mt-3 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:gap-2.5">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -162,9 +169,9 @@ const Navigation = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="p-1.5 rounded-md bg-background/70 backdrop-blur-sm border border-white/10 text-white hover:text-syntax-cyan hover:bg-background/90 hover:border-white/20 transition-colors"
+                  className="p-1 sm:p-1.5 rounded-md bg-background/70 backdrop-blur-sm border border-white/10 text-white hover:text-syntax-cyan hover:bg-background/90 hover:border-white/20 transition-colors"
                 >
-                  <social.icon size={19} />
+                  <social.icon size={18} />
                 </a>
               ))}
             </div>

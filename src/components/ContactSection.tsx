@@ -56,7 +56,7 @@ const ContactSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -80,6 +80,7 @@ const ContactSection = () => {
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.2, duration: 0.6 }}
+              className="max-w-[22rem] sm:max-w-none mx-auto w-full"
             >
               {/*
                 Mobile: near-fully transparent glass so Earth shows through
@@ -138,7 +139,7 @@ const ContactSection = () => {
                 {/* Form body — transparent bg on mobile */}
                 <form
                   onSubmit={handleSubmit}
-                  className="relative z-10 p-6 space-y-5"
+                  className="relative z-10 p-4 sm:p-6 space-y-4 sm:space-y-5"
                   style={{ background: 'transparent' }}
                 >
                   <div className="space-y-2">

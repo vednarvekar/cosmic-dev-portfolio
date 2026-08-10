@@ -112,7 +112,7 @@ const AboutSection = () => {
         style={{ background: 'radial-gradient(circle, #7c6aff 0%, transparent 70%)' }}
       />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -125,7 +125,7 @@ const AboutSection = () => {
             <span className="text-syntax-yellow">()</span>
           </h2>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-[22rem] sm:max-w-3xl mx-auto">
 
             {/* Glass terminal */}
             <div
@@ -165,7 +165,7 @@ const AboutSection = () => {
                 className="md:hidden"
                 style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.1) 100%)' }}
               >
-                <CodeBlock lines={codeLines} isInView={isInView} />
+                <CodeBlock lines={codeLines} isInView={isInView} className="p-3 sm:p-4" />
               </div>
 
               {/* Desktop code block — full lines, horizontal scroll if needed */}

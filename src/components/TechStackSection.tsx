@@ -94,7 +94,7 @@ const TechStackSection = () => {
         style={{ background: 'radial-gradient(circle, #7c6aff 0%, transparent 70%)' }}
       />
 
-      <div className="mx-auto max-w-5xl px-6 relative z-10">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -116,7 +116,7 @@ const TechStackSection = () => {
           {/* Sections */}
           <div className="space-y-12">
             {technologies.map((section, sectionIdx) => (
-              <div key={section.category}>
+              <div key={section.category} className="max-w-[22rem] sm:max-w-none mx-auto">
 
                 {/* Section header */}
                 <div className="flex items-center gap-3 mb-5">
@@ -131,7 +131,7 @@ const TechStackSection = () => {
                 </div>
 
                 {/* Cards grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1.5 sm:gap-2">
                   {section.items.map((tech, i) => (
                     <motion.div
                       key={tech.name}
@@ -173,7 +173,7 @@ const TechStackSection = () => {
                         </div>
 
                         {/* Content */}
-                        <div className="relative z-10 p-3 flex flex-col gap-2 h-full">
+                        <div className="relative z-10 p-2.5 sm:p-3 flex flex-col gap-2 h-full">
 
                           {/* Icon + name */}
                           <div className="flex items-center gap-2 pt-1">
